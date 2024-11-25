@@ -1,79 +1,103 @@
 # bitdsm-solana
 
-## Instructions to initialize the project in Solana for BitDSM
+## Instructions to Initialize the Project in Solana for BitDSM
 
-1. First, make sure you have Rust installed. If not, install it:
+### Prerequisites
 
-```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+1. **Install Rust** (if not already installed):
 
-2. Then install Anchor CLI using cargo:
+   ```bash
+   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+   ```
 
-```
-cargo install --git https://github.com/coral-xyz/anchor avm --locked
-avm install latest
-avm use latest
-```
+2. **Install Node.js** (using Homebrew for macOS):
 
-3. Verify the installation:
+   ```bash
+   brew install node
+   ```
 
-```
-anchor --version
-```
+3. **Install Yarn**:
+   ```bash
+   npm install -g yarn
+   ```
 
-4. Check your node version:
+### Install Anchor CLI
 
-```
-node --version
-```
+1. Install Anchor CLI using Cargo:
 
-# Install Node.js using homebrew (since you're on macOS)
+   ```bash
+   cargo install --git https://github.com/coral-xyz/anchor avm --locked
+   avm install latest
+   avm use latest
+   ```
 
-brew install node
+2. Verify the installation:
+   ```bash
+   anchor --version
+   ```
 
-# Install Yarn
+### Install Solana
 
-npm install -g yarn
+1. Install from Anza (recommended):
 
-# Verify yarn installation
+   ```bash
+   sh -c "$(curl -sSfL https://release.anza.xyz/stable/install)"
+   ```
 
-yarn --version
+   or from Solana:
 
-Install from Anza (recommended):
+   ```bash
+   sh -c "$(curl -sSfL https://release.solana.com/v1.17.0/install)"
+   ```
 
-```
-sh -c "$(curl -sSfL https://release.anza.xyz/stable/install)"
-```
+2. Verify the installation:
+   ```bash
+   solana --version
+   solana-test-validator --version
+   ```
 
-or from Solana:
+### Final Steps
 
-```
-sh -c "$(curl -sSfL https://release.solana.com/v1.17.0/install)"
-```
+1. **Check your Node version**:
 
-Verify the installation:
+   ```bash
+   node --version
+   ```
 
-```
-solana --version
-solana-test-validator --version
-```
+2. **Verify Yarn installation**:
 
-5. Run the test validator in a new terminal:
+   ```bash
+   yarn --version
+   ```
 
-```
-solana-test-validator
-```
+3. **Run the test validator in a new terminal**:
 
-6. Run the tests:
+   ```bash
+   solana-test-validator
+   ```
 
-```
-anchor test
-```
+4. **Run the tests**:
 
-Note: To create a new Anchor project :
+   ```bash
+   anchor test
+   ```
+
+   or
+
+   ```bash
+   anchor test --skip-local-validator
+   ```
+
+### Creating a New Anchor Project
+
+To create a new Anchor project:
 
 ```
 anchor init bitdsm-solana
 cd bitdsm-solana
 ```
+
+### Summary of Changes:
+
+- Grouped related instructions under clear headings (Prerequisites, Install Anchor CLI, Install Solana, Final Steps, Creating a New Anchor Project).
+- Improved the flow of the document for better readability and understanding.
