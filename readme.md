@@ -79,13 +79,19 @@
 4. **Run the tests**:
 
    ```bash
-   anchor test
+   anchor run test
    ```
 
    or
 
    ```bash
    anchor test --skip-local-validator
+   ```
+
+   or
+
+   ```bash
+   anchor test
    ```
 
 ### Creating a New Anchor Project
